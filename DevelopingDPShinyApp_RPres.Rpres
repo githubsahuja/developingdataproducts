@@ -1,0 +1,113 @@
+Aggregate Personal Savings Prediction Appl.
+========================================================
+author: 
+date: `r format(Sys.Date(), format="%B %d %Y")`
+transition: rotate
+
+<small>
+Peer Assessment: Create Shiny Application<br>
+DevelopingDPShinyApp<br>
+Based on derived model from R LifeCycleSavings Dataset  
+</small>
+
+Overview
+========================================================
+
+Dataset and Details: <a href="https://vincentarelbundock.github.io/Rdatasets/doc/datasets/LifeCycleSavings.html">LifeCycleSavings</a>; Included with R
+
+Under the life-cycle savings hypothesis the aggregate personal savings is explained by four predictors
+<small>
+- Percentage of population over 15 years (pop15),
+- Percentage of population over 75 years old (pop75), 
+- Per-capita disposable income (dpi), and 
+- Growth rate in per-capita disposable income (ddpi)
+</small>
+
+Application Details:
+<small>
+- Maps a linear regression model to the data
+- Predicts the value of savings based on user inputs for the four predictors
+</small>
+
+Application Model Mapping & Prediction
+========================================================
+
+```{r echo=FALSE, include=FALSE}
+data(LifeCycleSavings)
+
+```
+- Fit linear regression model to `LifeCycleSavings` data
+<font size=6>
+```{r}
+fit <- lm(sr ~ ., data = LifeCycleSavings)
+```
+</font>
+
+- Perform prediction
+
+<font size=6>
+```{r}
+inputData <- data.frame(pop15 = 25, 
+                pop75 = 3, dpi = 2015, ddpi = 6)
+pred <- predict(fit, newdata = inputData)
+```
+</font>
+
+<pre>Predicted Aggregate Personal Savings: <span style="color:orange">`r pred`</span></pre>
+
+- User can pick different values for the predictors and see how predicted value compares to other nations
+
+  
+Application Visual Output
+========================================================
+
+```{r echo=FALSE, include=FALSE}
+
+dfLifeCycleSavings = data.frame(LifeCycleSavings)
+# add column for country and use the row name to define its contents
+dfLifeCycleSavings$Country <- row.names(dfLifeCycleSavings)
+
+# generate a new row for the predicted value along with the predictors defined by user
+# name the country as PREDICTED
+predictedRow = data.frame(sr = pred, pop15 = 25, pop75 = 3, 
+                          dpi = 2015, ddpi = 6, Country = "PREDICTED")
+
+# bind the predicted row with rest of the data
+dfLifeCycleSavings = rbind(predictedRow, dfLifeCycleSavings)
+
+# color of predicted bin as orange
+mycol <- c("orange")
+# color of rest of the bins
+mycol[2:51] <- c("blue")
+
+# adjust the margins for better viewing
+par(mar=c(1, 1, 1, 1) + 0.1)
+
+```
+
+```{r echo=FALSE, fig.width=11, fig.asp=.50}
+
+barplot(dfLifeCycleSavings$sr, names.arg = dfLifeCycleSavings$Country, 
+        main="Aggregate Personal Savings", 
+        ylab="Aggregate Personal Savings", las = 2, col = mycol)
+
+```
+<br>
+First bin (orange) on the bar plot
+- Depicts the predicted value and how it compares to other nations
+
+
+Further Details
+========================================================
+Application Look & Feel
+<br>
+<a href="https://githubsahuja.shinyapps.io/DevelopingDPShinyApp/">
+<img src="./ApplicationSnapshot.png" width=75%; height=auto/>
+</a>
+<br>
+<small>
+Try it Yourself
+- Link to the application: [DevelopingDPShinyApp](https://githubsahuja.shinyapps.io/DevelopingDPShinyApp/)
+- Details of the R Dataset: [LifeCycleSavings](https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/LifeCycleSavings.html)
+- Shiny code for the application: [DevelopingDPShinyApp Code](https://github.com/githubsahuja/developingdataproducts)
+</small>
