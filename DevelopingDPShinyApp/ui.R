@@ -24,9 +24,11 @@ shinyUI(fluidPage(
       sliderInput("dpi", "Real Per-Capita Disposable Income?", 0, 5000, value = 2330),
       sliderInput("ddpi", "% Growth Rate of Disposable Income?", 0, 25, value = 3), 
       hr(),
-      h4("How to run?"),
-      h5(HTML("<ul><li>Select values for the 4 predictors above.</li>
-              <li>See the impact of change on predicted value, <br>the first bin (orange) of bar plot.</li></ul>"))
+      h4("How to use the application?"),
+      h5(HTML("<ul><li>Run the application in <b>full screen</b>.</li>
+              <li>Select values for the 4 predictors above.</li>
+              <li>See the impact of change on predicted value, 
+              <br>the first bin (orange) of the bar plot.</li></ul>"))
     ),
     
     # Show a plot of the generated distribution
