@@ -7,7 +7,7 @@ This application has been generated part of Peer Assessment for the Course 9 - D
 
 # Description
 
-For this application we utilize <b>LifeCycleSavings<b> dataset that comes with R. Details of the dataset can be found <a href="https://vincentarelbundock.github.io/Rdatasets/doc/datasets/LifeCycleSavings.html">here</a>. 
+For this application we utilize <b>LifeCycleSavings</b> dataset that comes with R. Details of the dataset can be found <a href="https://vincentarelbundock.github.io/Rdatasets/doc/datasets/LifeCycleSavings.html">here</a>. 
 
 Under the life-cycle savings hypothesis as developed by Franco Modigliani, the savings ratio (aggregate personal saving divided by disposable income) is explained by per-capita disposable income, the percentage rate of change in per-capita disposable income, and two demographic variables: the percentage of population less than 15 years old and the percentage of the population over 75 years old. The data are averaged over the decade 1960–1970 to remove the business cycle or other short-term fluctuations.
 
