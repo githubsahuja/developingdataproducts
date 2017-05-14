@@ -23,6 +23,11 @@ For the assignement we use linear regression to generate a model that best fits 
 
 # Running the application
 
-* Launch the application: <a href="https://githubsahuja.shinyapps.io/DevelopingDPShinyApp/">DevelopingDPShinyApp</a>.<br>In case that hyperlink does not work, here is the direct link to application:<br><pre> https://githubsahuja.shinyapps.io/DevelopingDPShinyApp/ 
+* Launch the application: [DevelopingDPShinyApp](https://githubsahuja.shinyapps.io/DevelopingDPShinyApp/).<br>In case that hyperlink does not work, here is the direct link to application:<br><pre> https://githubsahuja.shinyapps.io/DevelopingDPShinyApp/ 
 * Modify the predictors on the left panel
-* See the predicted value as first bin (orange color) in the bar chart
+* See the predicted value as first bin (orange color) in the bar chart and compare to other nations
+
+# Reproducible Pitch Presentation
+
+* Presentation is located in this repository: `DevelopingDPShinyApp_RPres`
+* Link to presentation for viewing in browser: [DevelopingDPShinyApp_RPres](http://githubsahuja.github.io/developingdataproducts/DevelopingDPShinyApp_RPres.html).<br>In case that hyperlink does not work, here is the direct link to application:<br><pre> http://githubsahuja.github.io/developingdataproducts/DevelopingDPShinyApp_RPres.html
