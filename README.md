@@ -23,6 +23,6 @@ For the assignement we use linear regression to generate a model that best fits 
 
 # Running the application
 
-* Launch the application
+* Launch the application: <a href="https://githubsahuja.shinyapps.io/DevelopingDPShinyApp/">DevelopingDPShinyApp</a>.<br>In case that hyperlink does not work, here is the direct link to application:<br><pre> https://githubsahuja.shinyapps.io/DevelopingDPShinyApp/ 
 * Modify the predictors on the left panel
 * See the predicted value as first bin (orange color) in the bar chart
